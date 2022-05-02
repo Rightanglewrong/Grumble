@@ -14,7 +14,7 @@ router.get('/auth/google', passport.authenticate(
 router.get('/grumble', passport.authenticate(
   'google',
   {
-    successRedirect : '/recipes',
+    successRedirect : '/',
     failureRedirect : '/'
   }
 ));

@@ -1,6 +1,6 @@
 const { append } = require("express/lib/response");
 var mongoose = require("mongoose");
-let Schema = mongoose.Schema;
+var Schema = mongoose.Schema;
 
 var usersSchema = new mongoose.Schema(
   {

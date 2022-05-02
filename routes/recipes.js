@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
+let recipesCtrl = require('../controllers/recipe')
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+// Get Recipes Index
+router.get('/', recipesCtrl.index);
+// Get new Recipe Form
+router.get('/new', recipesCtrl.new);
 
 module.exports = router;

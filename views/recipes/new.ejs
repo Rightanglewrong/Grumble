@@ -1,0 +1,11 @@
+<%- include('../partials/header') %> 
+<form 
+class='container'
+id='add-recipe'
+action="/recipes/"
+method="POST"
+>
+<label>What's the Recipe?</label>
+<input name="name" required="true" autocomplete="off" placeholder="Dish" />
+</form>
+<%- include('../partials/footer') %> 

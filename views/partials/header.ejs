@@ -17,6 +17,24 @@
     <link rel="stylesheet" href="stylesheets/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </head>
-  <body class="lime lighten-2 container">
+  <body class="lime lighten-2">
+    <nav>
+      <div class="nav-wrapper">
+        <img src="images/phatboilogo.png" alt="chubby-boi" class="brand-logo center" width="100px"/>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a href="/">Home</a></li>
+          <li><a href="/groceries">Grocery List</a></li>
+          <li><a href="/recipes">Recipes</a></li>
+          
+        </ul>
+        <div class="right">
+          <% if (user) { %>
+            <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+          <% } else { %>
+            <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
+          <% } %></li>
+        </div>
+      </div>
+    </nav>
     <h1 class="center"><%= title %></h1>
 
