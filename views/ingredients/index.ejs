@@ -1,0 +1,30 @@
+<%- include('../partials/header') %> 
+
+<table class="center container">
+    <thead class="table">
+        <tr>
+            <th>Ingredient</th>
+            <th>Quantity</th>
+            <th>Food Group</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% items.forEach(function(item){ %>
+        <tr>
+            <td><a href="/ingredients/<%= item.id %>"><%= item.ingredient %></a></td>
+            <td><%= item.quantity %></td>
+            <td><%= item.foodGroup %> </td>
+        </tr>
+        <% }) %>
+        <tr>
+            <td>
+                <button><a href="/ingredients/new">Add item</a></button>
+            </td>
+        </tr>
+    </tbody>
+    
+</table>
+
+
+
+<%- include('../partials/footer') %>

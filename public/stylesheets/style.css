@@ -6,6 +6,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: purple;
 }
 
 a {
@@ -15,4 +16,7 @@ a {
   border-radius: 50%;
   outline: 2px solid black;
 
+}
+p {
+  font-size: 100px;
 }

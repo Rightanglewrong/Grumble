@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+<div class="container">
+  <label>Change it up</label>
+  <form class="form" id="edit-recipe" action="/recipes/<%= recipe.id %>?_method=PUT" method="POST">
+    <label>Name of Dish</label>
+    <input
+      type="text"
+      id="edit-dish-name"
+      name="name"
+      required="true"
+      autocomplete="off"
+      value="<%= recipe.name %> "
+    />
+    <label>Description</label>
+    <input
+      type="text"
+      id="edit-dish-description"
+      name="description"
+      value="<%= recipe.description %> "
+    />
+    <label>Steps</label>
+    <input type="text" id="edit-dish-steps" name="steps" value="<%= recipe.steps %> " />
+    <div>
+      <label>Ingredients</label>
+      <input type="text" id="edit-ingredient" name="ingredient" value="<%= recipe.ingredients %> "/>
+    <button class="center-align" type="submit">Confirm Edit</button>
+  </form>
+</div>
+<%- include('../partials/footer') %>

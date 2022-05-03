@@ -3,13 +3,12 @@
 <table class="center">
     <thead class="table">
         <tr>
-            <td>Title</td>
-            <td>Description</td>
+            <th>Title</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <% recipes.forEach(function(recipe){ %>
-
         <tr>
             <td><a href="/recipes/<%= recipe.id %>"><%= recipe.name %></td>
             <td><%= recipe.description %></td>

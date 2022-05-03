@@ -11,7 +11,8 @@ const recipeSchema = new Schema({
     steps: {
         type: String
     },
-    ingredients: [{type: Schema.Types.ObjectId, ref: 'ingredient'}]
+    ingredients: [{type: Schema.Types.ObjectId, ref: 'Ingredient'}],
+    createdBy: {type: Schema.Types.ObjectId, ref: 'User'}
 })
 
 module.exports = mongoose.model('Recipe', recipeSchema)

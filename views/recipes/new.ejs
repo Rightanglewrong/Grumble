@@ -1,11 +1,29 @@
-<%- include('../partials/header') %> 
-<form 
-class='container'
-id='add-recipe'
-action="/recipes/"
-method="POST"
->
-<label>What's the Recipe?</label>
-<input name="name" required="true" autocomplete="off" placeholder="Dish" />
-</form>
-<%- include('../partials/footer') %> 
+<%- include('../partials/header') %>
+<div class="container">
+  <label>What's the Recipe?</label>
+  <form class="form" id="add-recipe" action="/recipes/" method="POST">
+    <label>Name of Dish</label>
+    <input
+      type="text"
+      id="dish-name"
+      name="name"
+      required="true"
+      autocomplete="off"
+      placeholder="Dish"
+    />
+    <label>Description</label>
+    <input
+      type="text"
+      id="dish-description"
+      name="description"
+      placeholder="Tell me about it"
+    />
+    <label>Steps</label>
+    <input type="text" id="dish-steps" name="steps" />
+    <div>
+      <label>Ingredients</label>
+      <input type="text" id="dish-ingredient" name="ingredient" placeholder="Seperate ingredients with comma"/>
+    <button class="center-align" type="submit">Add</button>
+  </form>
+</div>
+<%- include('../partials/footer') %>

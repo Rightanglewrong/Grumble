@@ -19,9 +19,7 @@ const ingredientSchema = new Schema({
     price: {
         type: Number,
         min: 0
-    },
-    timestamp: true
-
+    }
 })
 
 module.exports = mongoose.model('Ingredient', ingredientSchema)

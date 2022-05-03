@@ -5,36 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
     <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="/public/stylesheets/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- <link rel="stylesheet" href="../../public/stylesheets/style.css" /> -->
   </head>
-  <body class="lime lighten-2">
+  <body class="lime lighten-4">
     <nav>
       <div class="nav-wrapper">
-        <img src="images/phatboilogo.png" alt="chubby-boi" class="brand-logo center" width="100px"/>
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <img src="/images/phatboilogo.png" alt="boy-logo" class="brand-logo center" width="65px"/>
+        <ul id="nav-mobile" class="left hide-on-med-and-down dr">
           <li><a href="/">Home</a></li>
-          <li><a href="/groceries">Grocery List</a></li>
+          <li><a href="/ingredients">Grocery List</a></li>
           <li><a href="/recipes">Recipes</a></li>
           
         </ul>
         <div class="right">
           <% if (user) { %>
-            <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
-          <% } else { %>
+            <p>Sup <%= user.name %>: <a class="amber-text btn-small" href="/logout">Log Out</a>
+              <% } else { %></p>
             <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
           <% } %></li>
         </div>
       </div>
     </nav>
     <h1 class="center"><%= title %></h1>
+    <main class="container">
 

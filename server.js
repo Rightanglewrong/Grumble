@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
 var passport = require('passport');
+var methodOverride = require('method-override');
 // load the env vars
 require('dotenv').config()
 //req passport database
@@ -15,6 +16,7 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var recipesRouter = require('./routes/recipes');
+var ingredientsRouter = require('./routes/ingredients');
 
 var app = express();
 
@@ -27,6 +29,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 app.use(session({
   secret: 'FEEDME',
   resave: false,
@@ -37,6 +40,7 @@ app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/recipes', recipesRouter);
+app.use('/ingredients', ingredientsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

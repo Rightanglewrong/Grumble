@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+<div id="show-grid" class="center">
+  <h4 class="section"><%= recipe.name %></h4>
+  <div class="divider teal darken-3"></div>
+  <p class="section">Description: <%= recipe.description %></p>
+  <div class="divider teal darken-3"></div>
+  <p>Instructions: <%= recipe.steps %></p>
+  <div class="divider teal darken-3"></div>
+  <p>Ingredients: <%= recipe.ingredient %></p>
+  <button><a href="/recipes/<%= recipe.id %>/edit">Edit</a></button>
+  <form action="/recipes/<%= recipe.id%>?_method=DELETE" method="POST">
+    <button type="submit" value="Delete Recipe">Delete Recipe</button>
+  </form>
+</div>
+<%- include('../partials/footer') %>
