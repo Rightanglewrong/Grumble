@@ -2,8 +2,6 @@
 <div id="item-show" class="center">
   <h4 class="section">Item: <%= item.ingredient %></h4>
   <div class="divider teal darken-3"></div>
-  <h5 class="section">Quantity: <%= item.quantity %></h5>
-  <div class="divider teal darken-3"></div>
   <h5 class="section">Food Group: <%= item.foodGroup %></h5>
   <form action="/ingredients/<%= item.id%>?_method=DELETE" method="POST">
     <button type="submit" value="Delete Item">Delete Item</button>

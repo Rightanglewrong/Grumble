@@ -13,7 +13,7 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    <link rel="stylesheet" href="/public/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- <link rel="stylesheet" href="../../public/stylesheets/style.css" /> -->
   </head>
@@ -23,15 +23,17 @@
         <img src="/images/phatboilogo.png" alt="boy-logo" class="brand-logo center" width="65px"/>
         <ul id="nav-mobile" class="left hide-on-med-and-down dr">
           <li><a href="/">Home</a></li>
+            <% if (user) {%> 
           <li><a href="/ingredients/">Ingredient List</a></li>
           <li><a href="/recipes">Recipes</a></li>
+            <% } %> 
         </ul>
         <div class="right">
           <% if (user) { %>
             <p>Sup <%= user.name %>: <a class="amber-text btn-small" href="/logout">Log Out</a>
               <% } else { %></p>
             <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
-          <% } %></li>
+          <% } %>
         </div>
       </div>
     </nav>

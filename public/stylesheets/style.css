@@ -3,20 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: purple;
-}
-
-a {
-  color: #00B7FF;
-}
-.brand-logo {
-  border-radius: 50%;
-  outline: 2px solid black;
-
-}
-p {
-  font-size: 100px;
+#main-page-img {
+  width: 70vw;
 }

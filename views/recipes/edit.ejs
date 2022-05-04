@@ -12,17 +12,22 @@
       value="<%= recipe.name %> "
     />
     <label>Description</label>
-    <input
+    <textarea
       type="text"
       id="edit-dish-description"
       name="description"
       value="<%= recipe.description %> "
-    />
+    >
+    </textarea>
     <label>Steps</label>
-    <input type="text" id="edit-dish-steps" name="steps" value="<%= recipe.steps %> " />
+    <textarea 
+      type="text" 
+      id="edit-dish-steps" 
+      name="steps" 
+      value="<%= recipe.steps %> "
+      >
+    </textarea>
     <div>
-      <label>Ingredients</label>
-      <input type="text" id="edit-ingredient" name="ingredient" value="<%= recipe.ingredients %> "/>
     <button class="center-align" type="submit">Confirm Edit</button>
   </form>
 </div>

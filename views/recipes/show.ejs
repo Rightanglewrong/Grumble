@@ -7,19 +7,37 @@
   <div class="divider teal darken-3"></div>
   <p>Instructions: <%= recipe.steps %></p>
   <div class="divider teal darken-3"></div>
-  <p>Ingredients: <%= recipe.ingredient %></p>
+  <p>Ingredients: 
+    <ul>
+    <% recipe.ingredients.forEach(function(i) { %>
+      <li><%= i.ingredient %> </li>
+   <% }) %> 
+  </ul>
+    <!-- <%= recipe.ingredients.ingredient %></p> -->
   <% if (recipe.createdBy == user.id) { %>
-  <button>
-    <a href="/recipes/<%= recipe.id %>/edit">Edit</a>
-  </button>
+    
+  <div class="">
+      <form id="add-ing-to-rec" action="/recipes/<%= recipe.id %>/ingredients" method="POST">
+    
+        <select class="browser-default" name="ingredientId">
+          <%- ingredients.map(i => `<option value="${i.id}">${i.ingredient},${i.foodGroup}</option>`).join('') %>
+        </select>
+        <button type="submit">Add Ingredient</button>
+        
+      </form>
 
-  <form action="/recipes/<%= recipe.id%>?_method=DELETE" method="POST">
-    <button type="submit" value="Delete Recipe">Delete Recipe</button>
-  </form>
-  <% }else { %>
-    <div>
-      <h5 id="Non-user-message">You can only edit your own additions</p>
-    </div>
-  <% } %>  
+      <button>
+        <a href="/recipes/<%= recipe.id %>/edit">Edit</a>
+      </button>
+      
+      <form action="/recipes/<%= recipe.id%>?_method=DELETE" method="POST">
+        <button type="submit" value="Delete Recipe">Delete Recipe</button>
+      </form>
+      <% }else { %>
+        <div>
+          <h5 id="Non-user-message">You can only edit your own additions</p>
+          </div>
+  </div>
+  <%}%>  
 </div>
 <%- include('../partials/footer') %>

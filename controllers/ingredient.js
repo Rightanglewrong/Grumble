@@ -1,4 +1,5 @@
 const Ingredient = require("../models/ingredient");
+const Recipe = require("../models/recipe");
 const User = require("../models/user");
 
 module.exports = {
@@ -7,12 +8,13 @@ module.exports = {
   create,
   delete: deleteItem,
   show,
+  addToRep,
 };
 
 function index(req, res, next) {
   Ingredient.find({}, function (err, items) {
-    res.render('ingredients/index', {
-      title: "Grocery List",
+    res.render("ingredients/index", {
+      title: "Ingredient Database",
       items,
       user: req.user,
     });
@@ -21,15 +23,13 @@ function index(req, res, next) {
 
 function newIngredient(req, res, next) {
   res.render("ingredients/new", {
-    title: "What do I need to buy?",
+    title: "What is that?",
     user: req.user,
   });
 }
 
 function create(req, res, next) {
-  let newItem = new Ingredient(req.body);
-  newItem.save(function (err) {
-    if (err) return res.redirect("/ingredients/new");
+  Ingredient.create(req.body, function (err, ingredient) {
     res.redirect("/ingredients");
   });
 }
@@ -46,6 +46,18 @@ function show(req, res, next) {
       title: "Lookie der",
       item,
       user: req.user,
+    });
+  });
+}
+
+function addToRep(req, res, next) {
+  Recipe.findById(req.params.id, function (err, recipe) {
+    console.log("recipe id:", req.params);
+    console.log(req.body);
+    recipe.ingredients.push(req.body.ingredientId);
+    let user = req.user
+    recipe.save(function (err) {
+      res.redirect("/recipes/" + req.params.id);
     });
   });
 }

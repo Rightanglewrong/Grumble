@@ -9,7 +9,8 @@ const ingredientSchema = new Schema({
     },
     foodGroup: {
         type: String,
-        enum: ['Proteins','Fruit', 'Dairy','Vegetable', 'Grains']
+        required: true,
+        enum: ['Proteins','Fruit', 'Dairy','Vegetable', 'Grains', 'Misc']
     },
 })
 

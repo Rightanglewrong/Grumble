@@ -1,10 +1,9 @@
 <%- include('../partials/header') %> 
-
+<p class="center">Increase our Library</p>
 <table class="center container">
     <thead class="table">
         <tr>
             <th>Ingredient</th>
-            <th>Quantity</th>
             <th>Food Group</th>
         </tr>
     </thead>
@@ -12,7 +11,6 @@
         <% items.forEach(function(item){ %>
         <tr>
             <td><a href="/ingredients/<%= item.id %>"><%= item.ingredient %></a></td>
-            <td><%= item.quantity %></td>
             <td><%= item.foodGroup %> </td>
         </tr>
         <% }) %>

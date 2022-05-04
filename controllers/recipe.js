@@ -39,7 +39,8 @@ function create(req, res, next) {
 function show(req, res, next) {
   Recipe.findById(req.params.id).populate('ingredients').exec(function (err, recipe) {
     Ingredient.find({_id: {$nin: recipe.ingredients}})
-    .exec(function(err, ingredients){
+    .exec(function(err, ingredients) {
+      console.log(ingredients)
       res.render("recipes/show", {
         title: "Do you wanna make this?",
         recipe,

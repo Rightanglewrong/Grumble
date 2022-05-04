@@ -8,13 +8,7 @@
       required="true"
       autocomplete="off"
       placeholder="Item"
-    />
-    <label>Quantity</label>
-    <input
-      type="number"
-      name="quantity"
-      min="0"
-      placeholder="How many?"
+      oninput="this.value = this.value.toUpperCase()"
     />
     <label for="foodGroup">Food Group</label>
     <select class="browser-default" type="text" id="foodGroup" name="foodGroup">
@@ -23,8 +17,11 @@
         <option value="Dairy">Dairy</option>
         <option value="Vegetable">Vegetable</option>
         <option value="Grains">Grains</option>
+        <option value="Misc">Misc</option>
     </select>
+    <% if (user) { %>
     <button type="submit">Add</button>
+    <% } %> 
     </form>
 </div>
 <%- include('../partials/footer') %>

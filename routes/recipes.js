@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 let recipesCtrl = require('../controllers/recipe')
+let ingredientsCtrl = require('../controllers/ingredient')
 
 // Get Recipes Index
 router.get('/', recipesCtrl.index);
@@ -16,6 +17,8 @@ router.delete('/:id', recipesCtrl.delete)
 router.get('/:id/edit', recipesCtrl.edit)
 // Update page
 router.put('/:id', recipesCtrl.update)
+// Add Ingredient to Recipe
+router.post('/:id/ingredients', ingredientsCtrl.addToRep)
 
 
 function isLoggedIn(req, res, next) {

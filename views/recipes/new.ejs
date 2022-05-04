@@ -12,15 +12,21 @@
       placeholder="Dish"
     />
     <label>Description</label>
-    <input
+    <textarea
       type="text"
       id="dish-description"
       name="description"
       placeholder="Tell me about it"
-    />
+    >
+    </textarea>
     <label>Steps</label>
-    <input type="text" id="dish-steps" name="steps" />
-      <button type="submit">Add to Recipe</button>
+    <textarea
+      type="text"
+      id="dish-steps"
+      name="steps"
+      placeholder="How do we make it?"
+    ></textarea>
+    <button type="submit">Add to Recipe</button>
   </form>
 </div>
 <%- include('../partials/footer') %>
