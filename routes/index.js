@@ -6,12 +6,14 @@ const usersCtrl = require('../controllers/user')
 /* GET home page. */
 router.get('/', usersCtrl.index)
 
+
+//GoogleOAuth
 router.get('/auth/google', passport.authenticate(
   'google',
   { scope: ['profile', 'email'] }
 ));
 
-router.get('/oauth2callback', passport.authenticate(
+router.get('/grumble', passport.authenticate(
   'google',
   {
     successRedirect : '/',

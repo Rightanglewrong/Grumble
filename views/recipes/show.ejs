@@ -8,9 +8,18 @@
   <p>Instructions: <%= recipe.steps %></p>
   <div class="divider teal darken-3"></div>
   <p>Ingredients: <%= recipe.ingredient %></p>
-  <button><a href="/recipes/<%= recipe.id %>/edit">Edit</a></button>
+  <% if (recipe.createdBy == user.id) { %>
+  <button>
+    <a href="/recipes/<%= recipe.id %>/edit">Edit</a>
+  </button>
+
   <form action="/recipes/<%= recipe.id%>?_method=DELETE" method="POST">
     <button type="submit" value="Delete Recipe">Delete Recipe</button>
   </form>
+  <% }else { %>
+    <div>
+      <h5 id="Non-user-message">You can only edit your own additions</p>
+    </div>
+  <% } %>  
 </div>
 <%- include('../partials/footer') %>

@@ -1,6 +1,6 @@
 const { default: mongoose } = require("mongoose");
 const Recipe = require("../models/recipe");
-const User = require("../models/user");
+const Ingredient = require("../models/ingredient");
 
 module.exports = {
   index,
@@ -14,7 +14,6 @@ module.exports = {
 
 function index(req, res, next) {
   Recipe.find({}, function (err, recipes) {
-    console.log(req.user);
     res.render("recipes/index", { title: "Recipes", recipes, user: req.user });
   });
 }
@@ -30,24 +29,24 @@ function newRecipe(req, res, next) {
 
 function create(req, res, next) {
   let newRecipe = new Recipe(req.body);
-  console.log(req.body);
-  console.log(req.params.id);
   newRecipe.createdBy = req.user.id;
   newRecipe.save(function (err) {
     if (err) return res.redirect("recipes/new");
-    res.redirect("/recipes");
+    res.redirect(`/recipes/${newRecipe._id}`);
   });
 }
 
 function show(req, res, next) {
-  Recipe.findById(req.params.id, function (err, recipe) {
-      console.log(recipe.createdBy, "createdby")
-      console.log(req.user, "req user")
-    res.render("recipes/show", {
-      title: "Do you wanna make this?",
-      recipe,
-      user: req.user,
-    });
+  Recipe.findById(req.params.id).populate('ingredients').exec(function (err, recipe) {
+    Ingredient.find({_id: {$nin: recipe.ingredients}})
+    .exec(function(err, ingredients){
+      res.render("recipes/show", {
+        title: "Do you wanna make this?",
+        recipe,
+        user: req.user,
+        ingredients
+      });
+    })
   });
 }
 

@@ -5,7 +5,7 @@ let recipesCtrl = require('../controllers/recipe')
 // Get Recipes Index
 router.get('/', recipesCtrl.index);
 // Get new Recipe Form
-router.get('/new', recipesCtrl.new);
+router.get('/new', isLoggedIn, recipesCtrl.new);
 // Post new recipe
 router.post('/', isLoggedIn, recipesCtrl.create);
 // Get Each Recipe details

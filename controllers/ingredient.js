@@ -28,7 +28,6 @@ function newIngredient(req, res, next) {
 
 function create(req, res, next) {
   let newItem = new Ingredient(req.body);
-  console.log(newItem);
   newItem.save(function (err) {
     if (err) return res.redirect("/ingredients/new");
     res.redirect("/ingredients");
@@ -36,18 +35,13 @@ function create(req, res, next) {
 }
 
 function deleteItem(req, res, next) {
-  console.log(req.params.id);
   Ingredient.findByIdAndDelete(req.params.id, function (err, item) {
-    console.log(item);
     res.redirect("/ingredients");
   });
 }
 
 function show(req, res, next) {
   Ingredient.findById(req.params.id, function (err, item) {
-    console.log(req.params);
-    console.log(req.body);
-    console.log(req)
     res.render("ingredients/show", {
       title: "Lookie der",
       item,
