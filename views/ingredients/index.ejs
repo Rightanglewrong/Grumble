@@ -1,6 +1,6 @@
 <%- include('../partials/header') %> 
 <p class="center">Increase our Library</p>
-<table class="center container striped responsive-table z-depth-5">
+<table class="center container striped responsive-table z-depth-5 deep-orange lighten-4">
     <thead class="table">
         <tr>
             <th>Ingredient</th>
@@ -10,13 +10,19 @@
     <tbody>
         <% items.forEach(function(item){ %>
         <tr>
-            <td><a href="/ingredients/<%= item.id %>"><%= item.ingredient %></a></td>
-            <td><%= item.foodGroup %> </td>
+            <td>
+                <a href="/ingredients/<%= item.id %>"><%= item.ingredient %></a>
+            </td>
+            <td>
+                <%= item.foodGroup %> 
+            </td>
         </tr>
         <% }) %>
         <tr>
             <td>
-                <a href="/ingredients/new" class="waves-effect waves-light btn">Add item</a>
+                <td>
+                    <a href="/ingredients/new" class="waves-effect waves-light btn">Add item</a>
+                </td>
             </td>
         </tr>
     </tbody>

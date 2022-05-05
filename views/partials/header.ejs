@@ -5,17 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
+    <!-- Materialize -->
     <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
     <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css"  media="screen,projection"/>
+    <!-- Own CSS Sheet -->
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Indie+Flower&family=Oleo+Script&display=swap" rel="stylesheet">
   </head>
-  <body class="lime lighten-4">
+  <body class="light-green lighten-2">
     <!-- Dropdown Menu Content -->
     <div class="navbar-fixed">
-      <ul id="dropdown1" class="dropdown-content">
+      <ul id="dropdown1" class="dropdown-content light-green lighten-4">
         <li><a href="/">Home</a></li>
         <% if (user) {%> 
           <li>Grocery List - Coming Soon</li>
@@ -24,7 +30,7 @@
         <% } %> 
       </ul>
       <!-- Sidenav for Mobile -->
-      <ul class="sidenav" id="mobile-demo1">
+      <ul class="sidenav light-green lighten-4" id="mobile-demo1">
         <li><a href="/">Home</a></li>
         <% if (user) {%> 
           <li>Grocery List - Coming Soon</li>
@@ -35,15 +41,15 @@
     <!-- Nav Bar -->
     <nav >
       <div class="nav-wrapper">
-        <img src="/images/phatboilogo.png" alt="boy-logo" class="brand-logo center" width="65px"/>
         <a href="#" data-target="mobile-demo1" class="sidenav-trigger"><i class="material-icons">Menu</i></a>
+        <img src="/images/phatboilogo.png" alt="boy-logo" class="brand-logo center" width="65px"/>
         <ul id="nav-mobile" class="left hide-on-med-and-down dr">
           <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Take a Peek<i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
         <!-- User Login/Logout -->
         <div class="right">
           <% if (user) { %>
-            <p>Sup <%= user.name %>: <a class="amber-text btn-small" href="/logout">Log Out</a>
+            <p>Sup <%= user.name %>: <a class="amber-text btn-small extra" href="/logout">Log Out</a>
               <% } else { %></p>
             <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
           <% } %>

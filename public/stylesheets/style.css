@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  font-family: 'Oleo Script', cursive;
+}
 #main-page-img {
   width: 35vw;
 }
@@ -12,7 +15,21 @@
 }
 table {
   border: 6px solid rgba(124, 0, 0, 0.8);
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.5rem;
 }
 label {
   color: black;
+}
+.vertical {
+  resize: vertical;
+}
+
+.extra {
+  margin-right: 2vw;
+}
+
+.card {
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.5rem;
 }

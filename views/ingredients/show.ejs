@@ -1,10 +1,27 @@
 <%- include('../partials/header') %>
-<div id="item-show" class="center">
-  <h4 class="section">Item: <%= item.ingredient %></h4>
-  <div class="divider teal darken-3"></div>
-  <h5 class="section">Food Group: <%= item.foodGroup %></h5>
-  <form action="/ingredients/<%= item.id%>?_method=DELETE" method="POST">
-    <button type="submit" value="Delete Item">Delete Item</button>
-  </form>
+<div id="item-show" class="row">
+  <div class="card deep-orange lighten-4 z-depth-4">
+    <div class="card-content black-text center">
+      <span class="card-title"><%= item.ingredient %></span>
+      <div class="divider teal lighten-2"></div>
+      <p class="section">Food Group: <%= item.foodGroup %></p>
+    </div>
+    <div class="divider teal lighten-2"></div>
+    <div class="card-action">
+      <form
+        class="form"
+        action="/ingredients/<%= item.id%>?_method=DELETE"
+        method="POST"
+      >
+        <button
+          class="waves-effect btn-small lime-text text-lighten-3"
+          type="submit"
+          value="Delete Item"
+        >
+          Delete Item
+        </button>
+      </form>
+    </div>
+  </div>
 </div>
 <%- include('../partials/footer') %>
