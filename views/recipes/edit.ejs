@@ -9,23 +9,23 @@
       name="name"
       required="true"
       autocomplete="off"
-      value="<%= recipe.name %> "
+      value=" <%= recipe.name %> "
     />
     <label>Description</label>
     <textarea
       type="text"
       id="edit-dish-description"
       name="description"
-      value="<%= recipe.description %> "
     >
+    <%= recipe.description %>
     </textarea>
     <label>Steps</label>
     <textarea 
       type="text" 
       id="edit-dish-steps" 
       name="steps" 
-      value="<%= recipe.steps %> "
-      >
+    >
+      <%= recipe.steps %>
     </textarea>
     <div>
     <button class="center-align" type="submit">Confirm Edit</button>

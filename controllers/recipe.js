@@ -14,7 +14,7 @@ module.exports = {
 
 function index(req, res, next) {
   Recipe.find({}, function (err, recipes) {
-    res.render("recipes/index", { title: "Recipes", recipes, user: req.user });
+    res.render("recipes/index", { title: "Recipes", recipes});
   });
 }
 
@@ -22,8 +22,7 @@ function newRecipe(req, res, next) {
   const newRecipe = new Recipe();
   res.render("recipes/new", {
     title: "Add a Recipe",
-    newRecipe,
-    user: req.user,
+    newRecipe
   });
 }
 
@@ -40,11 +39,9 @@ function show(req, res, next) {
   Recipe.findById(req.params.id).populate('ingredients').exec(function (err, recipe) {
     Ingredient.find({_id: {$nin: recipe.ingredients}})
     .exec(function(err, ingredients) {
-      console.log(ingredients)
       res.render("recipes/show", {
         title: "Do you wanna make this?",
         recipe,
-        user: req.user,
         ingredients
       });
     })
@@ -62,7 +59,6 @@ function edit(req, res, next) {
     res.render("recipes/edit", {
       title: "Edit Recipe",
       recipe,
-      user: req.user,
     });
   });
 }

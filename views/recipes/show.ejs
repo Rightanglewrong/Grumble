@@ -13,10 +13,9 @@
       <li><%= i.ingredient %> </li>
    <% }) %> 
   </ul>
-    <!-- <%= recipe.ingredients.ingredient %></p> -->
   <% if (recipe.createdBy == user.id) { %>
     
-  <div class="">
+  <div>
       <form id="add-ing-to-rec" action="/recipes/<%= recipe.id %>/ingredients" method="POST">
     
         <select class="browser-default" name="ingredientId">
