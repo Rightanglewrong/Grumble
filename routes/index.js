@@ -3,9 +3,8 @@ var router = express.Router();
 const passport = require('passport');
 const usersCtrl = require('../controllers/user')
 
-/* GET home page. */
+/* GET Home page. */
 router.get('/', usersCtrl.index)
-
 
 //GoogleOAuth
 router.get('/auth/google', passport.authenticate(

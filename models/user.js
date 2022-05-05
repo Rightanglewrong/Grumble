@@ -3,8 +3,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 // var groceryListSchema = new mongoose.Schema({
-//   item: [{type: Schema.Types.ObjectId, ref: 'Ingredient'}],
-//   quantity: {type: Number, min: 0, default: 0 }, 
+//   recipes: [{type: Schema.Types.ObjectId, ref: 'Recipe'}],
+//   items: [{type: Schema.Types.ObjectId, ref: 'Ingredient'}],
 //   },
 //   {
 //   timestamps: true

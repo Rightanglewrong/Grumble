@@ -23,16 +23,16 @@
       <ul id="dropdown1" class="dropdown-content light-green lighten-4">
         <li><a href="/">Home</a></li>
         <% if (user) {%> 
-          <li>Grocery List - Coming Soon</li>
-          <li class=""><a href="/recipes">Recipes</a></li>
-          <li class=""><a href="/ingredients/">Ingredient List</a></li>
+          <!-- <li><a href ="/profile/<%= user.id %>">Your Schtuff</a></li> -->
+          <li><a href="/recipes">Recipes</a></li>
+          <li><a href="/ingredients/">Ingredient List</a></li>
         <% } %> 
       </ul>
         <!-- Sidenav for Mobile -->
         <ul class="sidenav light-green lighten-4" id="mobile-demo1" style="z-index: 999;">
           <li><a href="/">Home</a></li>
           <% if (user) {%> 
-            <li>Grocery List - Coming Soon</li>
+            <!-- <li><a href ="/user">Your Schtuff</a></li> -->
             <li><a href="/recipes">Recipes</a></li>
             <li><a href="/ingredients/">Ingredient List</a></li>
           <% } %> 

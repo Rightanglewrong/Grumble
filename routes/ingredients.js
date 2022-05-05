@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 let ingredientsCtrl = require('../controllers/ingredient');
-const user = require('../models/user');
 
 // Get Ingredients Index
 router.get('/', ingredientsCtrl.index);
@@ -22,7 +21,7 @@ function isLoggedIn(req, res, next) {
 function areYouAdmin(req, res, next) {
     console.log(req.user)
     console.log(user.id)
-    if(req.user.id === '626ff5adbe45e1857e7a3108') {
+    if(req.user.id === '62742d2eb16dc64fc0dbd9b8') {
         next();
     } else {
         res.redirect('/ingredients')

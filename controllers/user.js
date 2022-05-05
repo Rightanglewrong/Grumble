@@ -1,5 +1,6 @@
 const User = require('../models/user');
-const Recipe = require('../models/recipe')
+const Recipe = require('../models/recipe');
+const mongoose = require('mongoose')
 
 module.exports = {
     index,
@@ -7,8 +8,8 @@ module.exports = {
 
 function index(req, res, next) {
     res.render('index', {
-        user: req.user,
         name: req.query.name,
         title: 'Grrrumble'
     });
 }
+
