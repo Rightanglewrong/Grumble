@@ -19,8 +19,7 @@ function isLoggedIn(req, res, next) {
 }
 
 function areYouAdmin(req, res, next) {
-    console.log(req.user)
-    console.log(user.id)
+    console.log(req.user.id)
     if(req.user.id === '62742d2eb16dc64fc0dbd9b8') {
         next();
     } else {
