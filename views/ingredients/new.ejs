@@ -1,27 +1,38 @@
 <%- include('../partials/header') %>
-<div class="container">
-  <form class="form" id="add-recipe" action="/ingredients/" method="POST">
-    <label>Item</label>
-    <input
-      type="text"
-      name="ingredient"
-      required="true"
-      autocomplete="off"
-      placeholder="Item"
-      oninput="this.value = this.value.toUpperCase()"
-    />
-    <label for="foodGroup">Food Group</label>
-    <select class="browser-default" type="text" id="foodGroup" name="foodGroup">
-        <option value="Proteins">Proteins</option>
-        <option value="Fruit">Fruit</option>
-        <option value="Dairy">Dairy</option>
-        <option value="Vegetable">Vegetable</option>
-        <option value="Grains">Grains</option>
-        <option value="Misc">Misc</option>
-    </select>
-    <% if (user) { %>
-    <button type="submit">Add</button>
-    <% } %> 
+
+<div class="row">
+  <div class="card brown lighten-2 z-depth-4">
+    <div class="card-content center white-text">
+      <span class="card-title">Add Ingredient to Database</span>
+      <form class="form" id="add-recipe" action="/ingredients/" method="POST">
+        <label>Item</label>
+        <input
+          type="text"
+          name="ingredient"
+          required="true"
+          autocomplete="off"
+          placeholder="Item"
+          oninput="this.value = this.value.toUpperCase()"
+        />
+        <label for="foodGroup">Food Group</label>
+        <select  type="text" id="foodGroup" name="foodGroup">
+          <option value="Proteins">Proteins</option>
+          <option value="Fruit">Fruit</option>
+          <option value="Dairy">Dairy</option>
+          <option value="Vegetable">Vegetable</option>
+          <option value="Grains">Grains</option>
+          <option value="Misc">Misc</option>
+        </select>
+        
+    </div>
+    <div class="card-action">
+      <div class="center">
+        <% if (user) { %>
+        <button class="waves-effect waves-dark btn" type="submit">Add</button>
+        <% } %>
+      </div>
     </form>
+    </div>
+  </div>
 </div>
 <%- include('../partials/footer') %>

@@ -1,42 +1,51 @@
 <%- include('../partials/header') %>
 
-<div id="show-grid" class="center">
-  <h4 class="section"><%= recipe.name %></h4>
-  <div class="divider teal darken-3"></div>
-  <p class="section">Description: <%= recipe.description %></p>
-  <div class="divider teal darken-3"></div>
-  <p>Instructions: <%= recipe.steps %></p>
-  <div class="divider teal darken-3"></div>
-  <p>Ingredients: 
-    <ul>
-    <% recipe.ingredients.forEach(function(i) { %>
-      <li><%= i.ingredient %> </li>
-   <% }) %> 
-  </ul>
-  <% if (recipe.createdBy == user.id) { %>
-    
-  <div>
+
+<div class="row center">
+  <div class="card brown lighten-2 z-depth-4">
+    <div class="card-content white-text">
+      <p class="card-title flow-text"><%= recipe.name %></p>
+      <div class="divider teal lighten-2"></div>
+      <p>Description: <%= recipe.description %> </p>
+      <div class="divider teal lighten-2"></div>
+      <p>Instructions: <%= recipe.steps %></p>
+    </div>
+  </div>
+</div>
+
+
+<div class="row center">
+  <div class="card brown lighten-3 z-depth-4">
+    <div class="card-content white-text">
+      <p class="card-title">Ingredients</p>
+      <div class="divider teal lighten-4"></div>
+      <ul>
+        <% recipe.ingredients.forEach(function(i) { %>
+          <li><%= i.ingredient %> </li>
+        <% }) %> 
+      </ul>
+      <div class="divider teal lighten-4"></div>
+      <div class="transparent">...</div>
+      <% if (recipe.createdBy == user.id) { %>  
       <form id="add-ing-to-rec" action="/recipes/<%= recipe.id %>/ingredients" method="POST">
-    
         <select class="browser-default" name="ingredientId">
           <%- ingredients.map(i => `<option value="${i.id}">${i.ingredient},${i.foodGroup}</option>`).join('') %>
         </select>
-        <button type="submit">Add Ingredient</button>
-        
+        <button class="lime-text text-lighten-3 btn-small" type="submit">Add Ingredient</button> 
       </form>
-
-      <button>
-        <a href="/recipes/<%= recipe.id %>/edit">Edit</a>
-      </button>
-      
-      <form action="/recipes/<%= recipe.id%>?_method=DELETE" method="POST">
-        <button type="submit" value="Delete Recipe">Delete Recipe</button>
-      </form>
-      <% }else { %>
-        <div>
-          <h5 id="Non-user-message">You can only edit your own additions</p>
+      <div class="divider teal lighten-4"></div>
+    </div>
+      <div class="card-action">
+        <a class="lime-text text-lighten-3 btn-small" href="/recipes/<%= recipe.id %>/edit">Edit</a>
+        <form action="/recipes/<%= recipe.id%>?_method=DELETE" method="POST">
+          <button class="lime-text text-lighten-3 btn-small" type="submit" value="Delete Recipe">Delete Recipe</button>
+          <% }else { %>
+          <div>
+            <h5 id="Non-user-message">You can only edit your own additions</p>
           </div>
+        <%}%>  
+        </form>
+      </div>
   </div>
-  <%}%>  
 </div>
 <%- include('../partials/footer') %>

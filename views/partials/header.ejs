@@ -9,25 +9,38 @@
     rel="stylesheet"
     href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
+    <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- <link rel="stylesheet" href="../../public/stylesheets/style.css" /> -->
   </head>
   <body class="lime lighten-4">
-    <nav>
+    <!-- Dropdown Menu Content -->
+    <div class="navbar-fixed">
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="/">Home</a></li>
+        <% if (user) {%> 
+          <li>Grocery List - Coming Soon</li>
+          <li class=""><a href="/recipes">Recipes</a></li>
+          <li class=""><a href="/ingredients/">Ingredient List</a></li>
+        <% } %> 
+      </ul>
+      <!-- Sidenav for Mobile -->
+      <ul class="sidenav" id="mobile-demo1">
+        <li><a href="/">Home</a></li>
+        <% if (user) {%> 
+          <li>Grocery List - Coming Soon</li>
+          <li class=""><a href="/recipes">Recipes</a></li>
+          <li class=""><a href="/ingredients/">Ingredient List</a></li>
+        <% } %> 
+      </ul>
+    <!-- Nav Bar -->
+    <nav >
       <div class="nav-wrapper">
         <img src="/images/phatboilogo.png" alt="boy-logo" class="brand-logo center" width="65px"/>
+        <a href="#" data-target="mobile-demo1" class="sidenav-trigger"><i class="material-icons">Menu</i></a>
         <ul id="nav-mobile" class="left hide-on-med-and-down dr">
-          <li><a href="/">Home</a></li>
-            <% if (user) {%> 
-          <li><a href="/ingredients/">Ingredient List</a></li>
-          <li><a href="/recipes">Recipes</a></li>
-            <% } %> 
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Take a Peek<i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
+        <!-- User Login/Logout -->
         <div class="right">
           <% if (user) { %>
             <p>Sup <%= user.name %>: <a class="amber-text btn-small" href="/logout">Log Out</a>
@@ -37,6 +50,7 @@
         </div>
       </div>
     </nav>
+  </div>
     <h1 class="center"><%= title %></h1>
     <main class="container">
 

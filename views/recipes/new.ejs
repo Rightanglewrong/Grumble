@@ -1,32 +1,35 @@
 <%- include('../partials/header') %>
-<div class="container">
-  <label>What's the Recipe?</label>
-  <form class="form" id="add-recipe" action="/recipes/" method="POST">
-    <label>Name of Dish</label>
-    <input
+<div class="row">
+  <div class="card brown lighten-2">
+    <div class="card-content white-text center">
+      <span class="card-title">What's the Recipe?</span>
+      <form class="form" id="add-recipe" action="/recipes/" method="POST">
+      <label>Name of Dish</label>
+      <input
       type="text"
       id="dish-name"
       name="name"
       required="true"
       autocomplete="off"
       placeholder="Dish"
-    />
-    <label>Description</label>
-    <textarea
-      type="text"
-      id="dish-description"
-      name="description"
-      placeholder="Tell me about it"
-    >
-    </textarea>
-    <label>Steps</label>
-    <textarea
+      />
+      <label>Description</label>
+      <textarea
+        type="text"
+        id="dish-description"
+        name="description"
+        placeholder="Tell me about it"
+      ></textarea>
+      <label>Steps</label>
+      <textarea
       type="text"
       id="dish-steps"
       name="steps"
       placeholder="How do we make it?"
     ></textarea>
-    <button type="submit">Add to Recipe</button>
-  </form>
+    <button class="lime-text text-lighten-3 btn-small" type="submit">Add to Recipe</button>
+      </form>
+    </div>
+  </div>
 </div>
 <%- include('../partials/footer') %>

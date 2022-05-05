@@ -1,7 +1,7 @@
 <%- include('../partials/header') %> 
 <h4 class="center">Recipe List</h4>
-<table class="center">
-    <thead class="table">
+<table class="center striped z-depth-5">
+    <thead>
         <tr>
             <th>Title</th>
             <th>Description</th>
@@ -15,8 +15,9 @@
         </tr>
         <% }) %>
         <tr>
+            <td></td>
             <td>
-                <button><a href="/recipes/new">Add a recipe</a></button>
+                <a href="/recipes/new" class="lime-text text-lighten-3 btn-small">Add a recipe</a>
             </td>
         </tr>
     </tbody>

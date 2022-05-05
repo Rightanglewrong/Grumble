@@ -40,7 +40,7 @@ function show(req, res, next) {
     Ingredient.find({_id: {$nin: recipe.ingredients}})
     .exec(function(err, ingredients) {
       res.render("recipes/show", {
-        title: "Do you wanna make this?",
+        title: "Deets",
         recipe,
         ingredients
       });

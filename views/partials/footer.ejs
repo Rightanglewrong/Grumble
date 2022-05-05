@@ -1,3 +1,33 @@
 </main>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+<script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    M.Dropdown.init(elems,{
+        coverTrigger: false,
+        closeOnClick: false,
+        hover: true,
+        inDuration: 700,
+        outDuration: 700,
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(elems, {
+        draggable: true,
+        inDuration: 300,
+        outDuration: 300,
+        edge: left,
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    M.FormSelect.init(elems)
+  });
+
+</script>
 </body>
 </html>

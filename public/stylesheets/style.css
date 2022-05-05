@@ -4,5 +4,15 @@
   box-sizing: border-box;
 }
 #main-page-img {
-  width: 70vw;
+  width: 35vw;
+}
+.btn-small,
+.btn {
+  margin: 5px;
+}
+table {
+  border: 6px solid rgba(124, 0, 0, 0.8);
+}
+label {
+  color: black;
 }
