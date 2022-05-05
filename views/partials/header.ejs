@@ -20,7 +20,6 @@
   </head>
   <body class="light-green lighten-2">
     <!-- Dropdown Menu Content -->
-    <div class="navbar-fixed">
       <ul id="dropdown1" class="dropdown-content light-green lighten-4">
         <li><a href="/">Home</a></li>
         <% if (user) {%> 
@@ -29,16 +28,17 @@
           <li class=""><a href="/ingredients/">Ingredient List</a></li>
         <% } %> 
       </ul>
-      <!-- Sidenav for Mobile -->
-      <ul class="sidenav light-green lighten-4" id="mobile-demo1">
-        <li><a href="/">Home</a></li>
-        <% if (user) {%> 
-          <li>Grocery List - Coming Soon</li>
-          <li class=""><a href="/recipes">Recipes</a></li>
-          <li class=""><a href="/ingredients/">Ingredient List</a></li>
-        <% } %> 
-      </ul>
+        <!-- Sidenav for Mobile -->
+        <ul class="sidenav light-green lighten-4" id="mobile-demo1" style="z-index: 999;">
+          <li><a href="/">Home</a></li>
+          <% if (user) {%> 
+            <li>Grocery List - Coming Soon</li>
+            <li><a href="/recipes">Recipes</a></li>
+            <li><a href="/ingredients/">Ingredient List</a></li>
+          <% } %> 
+        </ul>
     <!-- Nav Bar -->
+    <div class="navbar-fixed">
     <nav >
       <div class="nav-wrapper">
         <a href="#" data-target="mobile-demo1" class="sidenav-trigger"><i class="material-icons">Menu</i></a>
@@ -56,6 +56,8 @@
         </div>
       </div>
     </nav>
+
+    </ul>
   </div>
     <h1 class="center"><%= title %></h1>
     <main class="container">
