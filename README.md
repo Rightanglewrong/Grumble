@@ -1,6 +1,8 @@
 # Grumble
 
 ### When you can't decide what to eat and you hate grocery shopping
+
+
 ---
 ## Trello Planning Board
 [Here](https://trello.com/b/afJSncQN/planning)
@@ -8,7 +10,35 @@
 ---
 ## ERD
 ---
-![ERD](/Grumble/Grumble%20ERD.svg)
+![ERD](/public/images/Grumble%20ERD.png)
+
 ---
-Wire Frame
-![Wireframe](/Grumble/20220429_020359.jpg)# Grumble
+Screenshots
+![1](/public/images/Screen%20Shot%202022-05-05%20at%206.01.58%20PM.png)
+![2](/public/images/Screen%20Shot%202022-05-05%20at%206.02.09%20PM.png)
+![3](/public/images/Screen%20Shot%202022-05-05%20at%206.02.15%20PM.png)
+
+---
+Tech Used:
+
+    EJS
+    Express
+    Passport
+    JS
+    CSS
+    Mongoose
+    Mongodb
+    Materialize
+    Google OAuth
+    Google DevTools
+
+---
+Deployed App
+
+[Test this babe out](https://grumble-grumble.herokuapp.com/)
+
+---
+Future Steps: 
+
+Located in Trello board
+--
