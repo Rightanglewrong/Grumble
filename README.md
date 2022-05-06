@@ -22,6 +22,7 @@ Screenshots
 Tech Used:
 
     EJS
+    Node.js
     Express
     Passport
     JS
