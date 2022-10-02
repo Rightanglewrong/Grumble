@@ -7,11 +7,11 @@
             <th>Description</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="container">
         <% recipes.forEach(function(recipe){ %>
         <tr>
-            <td><a href="/recipes/<%= recipe.id %>"><%= recipe.name %></td>
-            <td><%= recipe.description %></td>
+            <td class="center"><a href="/recipes/<%= recipe.id %>"><%= recipe.name %></td>
+            <td ><%= recipe.description %></td>
         </tr>
         <% }) %>
         <tr>
